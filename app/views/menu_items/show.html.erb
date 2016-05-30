@@ -1,0 +1,37 @@
+<div class="page-header">
+  <h3>Menu Item #<%= @menu_item.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Restaurant</dt>
+      <dd><%= @menu_item.restaurant_id %></dd>
+
+      <dt>Photo</dt>
+      <dd><%= @menu_item.photo %></dd>
+
+      <dt>Availability</dt>
+      <dd><%= @menu_item.availability %></dd>
+
+      <dt>Description</dt>
+      <dd><%= @menu_item.description %></dd>
+
+      <dt>Menu item name</dt>
+      <dd><%= @menu_item.menu_item_name %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/menu_items" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/menu_items/<%= @menu_item.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_menu_item/<%= @menu_item.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

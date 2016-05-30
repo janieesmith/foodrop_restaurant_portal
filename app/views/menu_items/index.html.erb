@@ -1,0 +1,36 @@
+<div class="page-header">
+  <h1>
+    Menu items
+    <a href="/menu_items/new" class="btn btn-lg btn-success">New Menu item</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Restaurant</th>
+        <th>Photo</th>
+        <th>Availability</th>
+        <th>Description</th>
+        <th>Menu item name</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @menu_items.each do |menu_item| %>
+      <tr>
+        <td><%= menu_item.restaurant_id %></td>
+        <td><%= menu_item.photo %></td>
+        <td><%= menu_item.availability %></td>
+        <td><%= menu_item.description %></td>
+        <td><%= menu_item.menu_item_name %></td>
+        <td>
+          <a href="/menu_items/<%= menu_item.id %>" class="btn btn-primary">Show</a>
+          <a href="/menu_items/<%= menu_item.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_menu_item/<%= menu_item.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
